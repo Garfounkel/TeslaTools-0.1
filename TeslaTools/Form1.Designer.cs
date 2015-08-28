@@ -28,102 +28,95 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.preferenceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
+            this.Tabs = new System.Windows.Forms.TabControl();
+            this.TeslaSplit = new System.Windows.Forms.TabPage();
+            this.SaveEditor = new System.Windows.Forms.TabPage();
+            this.Bingo = new System.Windows.Forms.TabPage();
+            this.TASlagrad = new System.Windows.Forms.TabPage();
+            this.Tabs.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // Tabs
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.aboutToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(585, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
+            this.Tabs.AccessibleName = "";
+            this.Tabs.Controls.Add(this.TeslaSplit);
+            this.Tabs.Controls.Add(this.SaveEditor);
+            this.Tabs.Controls.Add(this.Bingo);
+            this.Tabs.Controls.Add(this.TASlagrad);
+            this.Tabs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Tabs.Location = new System.Drawing.Point(0, 0);
+            this.Tabs.Name = "Tabs";
+            this.Tabs.SelectedIndex = 0;
+            this.Tabs.Size = new System.Drawing.Size(941, 715);
+            this.Tabs.TabIndex = 1;
             // 
-            // fileToolStripMenuItem
+            // TeslaSplit
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.preferenceToolStripMenuItem,
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
+            this.TeslaSplit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("TeslaSplit.BackgroundImage")));
+            this.TeslaSplit.Location = new System.Drawing.Point(4, 22);
+            this.TeslaSplit.Name = "TeslaSplit";
+            this.TeslaSplit.Padding = new System.Windows.Forms.Padding(3);
+            this.TeslaSplit.Size = new System.Drawing.Size(933, 689);
+            this.TeslaSplit.TabIndex = 0;
+            this.TeslaSplit.Text = "TeslaSplit";
+            this.TeslaSplit.UseVisualStyleBackColor = true;
+            this.TeslaSplit.Click += new System.EventHandler(this.tabPage1_Click);
             // 
-            // preferenceToolStripMenuItem
+            // SaveEditor
             // 
-            this.preferenceToolStripMenuItem.Name = "preferenceToolStripMenuItem";
-            this.preferenceToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.preferenceToolStripMenuItem.Text = "Preference";
-            this.preferenceToolStripMenuItem.Click += new System.EventHandler(this.preferenceToolStripMenuItem_Click);
+            this.SaveEditor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SaveEditor.BackgroundImage")));
+            this.SaveEditor.Location = new System.Drawing.Point(4, 22);
+            this.SaveEditor.Name = "SaveEditor";
+            this.SaveEditor.Padding = new System.Windows.Forms.Padding(3);
+            this.SaveEditor.Size = new System.Drawing.Size(933, 689);
+            this.SaveEditor.TabIndex = 1;
+            this.SaveEditor.Text = "SaveEditor";
+            this.SaveEditor.UseVisualStyleBackColor = true;
             // 
-            // aboutToolStripMenuItem
+            // Bingo
             // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            this.Bingo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Bingo.BackgroundImage")));
+            this.Bingo.Location = new System.Drawing.Point(4, 22);
+            this.Bingo.Name = "Bingo";
+            this.Bingo.Padding = new System.Windows.Forms.Padding(3);
+            this.Bingo.Size = new System.Drawing.Size(933, 689);
+            this.Bingo.TabIndex = 2;
+            this.Bingo.Text = "Bingo";
+            this.Bingo.UseVisualStyleBackColor = true;
             // 
-            // exitToolStripMenuItem
+            // TASlagrad
             // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.testToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(94, 26);
-            // 
-            // testToolStripMenuItem
-            // 
-            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
-            this.testToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
-            this.testToolStripMenuItem.Text = "test";
+            this.TASlagrad.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("TASlagrad.BackgroundImage")));
+            this.TASlagrad.Location = new System.Drawing.Point(4, 22);
+            this.TASlagrad.Name = "TASlagrad";
+            this.TASlagrad.Padding = new System.Windows.Forms.Padding(3);
+            this.TASlagrad.Size = new System.Drawing.Size(933, 689);
+            this.TASlagrad.TabIndex = 3;
+            this.TASlagrad.Text = "TASlagrad";
+            this.TASlagrad.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(585, 489);
-            this.Controls.Add(this.menuStrip1);
+            this.ClientSize = new System.Drawing.Size(941, 715);
+            this.Controls.Add(this.Tabs);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
+            this.Text = "TeslaTools";
+            this.Tabs.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem preferenceToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
+        private System.Windows.Forms.TabControl Tabs;
+        private System.Windows.Forms.TabPage TeslaSplit;
+        private System.Windows.Forms.TabPage SaveEditor;
+        private System.Windows.Forms.TabPage Bingo;
+        private System.Windows.Forms.TabPage TASlagrad;
     }
 }
 

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace TeslaTools
 {
@@ -11,24 +9,9 @@ namespace TeslaTools
             InitializeComponent();
         }
 
-        private void preferenceToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Console.Error.WriteLine("Preference clicked");
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void tabPage1_Click(object sender, System.EventArgs e)
         {
 
-        }
-
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Debug.WriteLine("About clicked");
-        }
-
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 }
