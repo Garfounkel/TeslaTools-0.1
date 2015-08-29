@@ -1,0 +1,8 @@
+﻿
+namespace TeslaTools
+{
+    class TASlagrad
+    {
+
+    }
+}
