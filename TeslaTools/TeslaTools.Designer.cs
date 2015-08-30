@@ -31,15 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TeslaTools));
             this.Tabs = new System.Windows.Forms.TabControl();
             this.Bingo = new System.Windows.Forms.TabPage();
+            this.ScrollNumber = new System.Windows.Forms.NumericUpDown();
+            this.ScrollsNumberLabel = new System.Windows.Forms.Label();
+            this.GenerateScrollListButton = new System.Windows.Forms.Button();
             this.SeedLabel = new System.Windows.Forms.Label();
             this.ChangeSeedButton = new System.Windows.Forms.Button();
             this.SeedTextBox = new System.Windows.Forms.TextBox();
             this.TeslaSplit = new System.Windows.Forms.TabPage();
             this.SaveEditor = new System.Windows.Forms.TabPage();
             this.TASlagrad = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ScrollListTextBox = new System.Windows.Forms.TextBox();
             this.Tabs.SuspendLayout();
             this.Bingo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ScrollNumber)).BeginInit();
             this.SuspendLayout();
             // 
             // Tabs
@@ -59,7 +63,10 @@
             // Bingo
             // 
             this.Bingo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Bingo.BackgroundImage")));
-            this.Bingo.Controls.Add(this.button1);
+            this.Bingo.Controls.Add(this.ScrollListTextBox);
+            this.Bingo.Controls.Add(this.ScrollNumber);
+            this.Bingo.Controls.Add(this.ScrollsNumberLabel);
+            this.Bingo.Controls.Add(this.GenerateScrollListButton);
             this.Bingo.Controls.Add(this.SeedLabel);
             this.Bingo.Controls.Add(this.ChangeSeedButton);
             this.Bingo.Controls.Add(this.SeedTextBox);
@@ -70,6 +77,53 @@
             this.Bingo.TabIndex = 2;
             this.Bingo.Text = "Bingo";
             this.Bingo.UseVisualStyleBackColor = true;
+            // 
+            // ScrollNumber
+            // 
+            this.ScrollNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ScrollNumber.Location = new System.Drawing.Point(30, 175);
+            this.ScrollNumber.Maximum = new decimal(new int[] {
+            36,
+            0,
+            0,
+            0});
+            this.ScrollNumber.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.ScrollNumber.Name = "ScrollNumber";
+            this.ScrollNumber.Size = new System.Drawing.Size(58, 31);
+            this.ScrollNumber.TabIndex = 7;
+            this.ScrollNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ScrollNumber.Value = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.ScrollNumber.ValueChanged += new System.EventHandler(this.ScrollNumber_ValueChanged);
+            // 
+            // ScrollsNumberLabel
+            // 
+            this.ScrollsNumberLabel.AutoSize = true;
+            this.ScrollsNumberLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ScrollsNumberLabel.ForeColor = System.Drawing.Color.Snow;
+            this.ScrollsNumberLabel.Location = new System.Drawing.Point(25, 148);
+            this.ScrollsNumberLabel.Name = "ScrollsNumberLabel";
+            this.ScrollsNumberLabel.Size = new System.Drawing.Size(157, 24);
+            this.ScrollsNumberLabel.TabIndex = 6;
+            this.ScrollsNumberLabel.Text = "Number of scrolls";
+            // 
+            // GenerateScrollListButton
+            // 
+            this.GenerateScrollListButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GenerateScrollListButton.Location = new System.Drawing.Point(93, 176);
+            this.GenerateScrollListButton.Name = "GenerateScrollListButton";
+            this.GenerateScrollListButton.Size = new System.Drawing.Size(62, 27);
+            this.GenerateScrollListButton.TabIndex = 4;
+            this.GenerateScrollListButton.Text = "GO";
+            this.GenerateScrollListButton.UseVisualStyleBackColor = true;
+            this.GenerateScrollListButton.Click += new System.EventHandler(this.GenerateScrollListButton_Click);
             // 
             // SeedLabel
             // 
@@ -136,15 +190,17 @@
             this.TASlagrad.Text = "TASlagrad";
             this.TASlagrad.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // ScrollListTextBox
             // 
-            this.button1.Location = new System.Drawing.Point(394, 69);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.ScrollListTextBox.Enabled = false;
+            this.ScrollListTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ScrollListTextBox.Location = new System.Drawing.Point(30, 224);
+            this.ScrollListTextBox.Multiline = true;
+            this.ScrollListTextBox.Name = "ScrollListTextBox";
+            this.ScrollListTextBox.ShortcutsEnabled = false;
+            this.ScrollListTextBox.Size = new System.Drawing.Size(430, 87);
+            this.ScrollListTextBox.TabIndex = 8;
+            this.ScrollListTextBox.Text = "Scrolls List: ";
             // 
             // TeslaTools
             // 
@@ -158,6 +214,7 @@
             this.Tabs.ResumeLayout(false);
             this.Bingo.ResumeLayout(false);
             this.Bingo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ScrollNumber)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -172,7 +229,10 @@
         private System.Windows.Forms.TextBox SeedTextBox;
         private System.Windows.Forms.Button ChangeSeedButton;
         private System.Windows.Forms.Label SeedLabel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button GenerateScrollListButton;
+        private System.Windows.Forms.Label ScrollsNumberLabel;
+        private System.Windows.Forms.NumericUpDown ScrollNumber;
+        private System.Windows.Forms.TextBox ScrollListTextBox;
     }
 }
 

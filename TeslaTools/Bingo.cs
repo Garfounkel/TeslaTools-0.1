@@ -1,6 +1,5 @@
-﻿
-using System;
-using System.Diagnostics;
+﻿using System;
+using System.Collections.Generic;
 
 namespace TeslaTools
 {
@@ -10,6 +9,10 @@ namespace TeslaTools
         private Random rand;
 
         public string Seed;
+        public int IntSeed;
+        public int NumberOfScrolls;
+        public List<int> ScrollsList;
+
 
         public Bingo()
         {
@@ -23,14 +26,45 @@ namespace TeslaTools
 
         public void CreateRandFromSeed()
         {
-            int intSeed = 0;
+            IntSeed = 0;
             foreach (char c in Seed)
             {
-                intSeed += (c * c);
+                IntSeed += (c * c);
             }
 
-            rand = new Random(intSeed);
-            Debug.WriteLine("Seed: " + intSeed);
+            rand = new Random(IntSeed);
+        }
+
+        public List<int> GetRandomScrollList(int scrollNumber)
+        {
+            ScrollsList = new List<int>();
+            CreateRandFromSeed();
+            for (int i = 0; i < scrollNumber; i++)
+            {
+                int scroll = rand.Next(1, 37);
+                if (ScrollsList.Contains(scroll))
+                {
+                    i--;
+                }
+                else
+                {
+                    ScrollsList.Add(scroll);
+                }
+            }
+
+            return ScrollsList;
+        }
+
+        public string PrintScrolls()
+        {
+            string s = "";
+            foreach (int i in ScrollsList)
+            {
+                s += (i) + ", ";
+            }
+            s = s.Remove(s.Length - 2);
+
+            return s;
         }
     }
 }

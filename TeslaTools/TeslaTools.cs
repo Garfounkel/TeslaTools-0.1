@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace TeslaTools
@@ -21,23 +22,34 @@ namespace TeslaTools
 
             // Bingo Stuffs 
             SeedTextBox.Text = bingo.GetRandomSeed();
+            bingo.NumberOfScrolls = 15;
         }
 
         #region Bingo Stuffs
         private void SeedTextBox_TextChanged(object sender, EventArgs e)
         {
             bingo.Seed = SeedTextBox.Text;
+            bingo.CreateRandFromSeed();
         }
 
         private void ChangeSeedButton_Click(object sender, EventArgs e)
         {
             SeedTextBox.Text = bingo.GetRandomSeed();
         }
-        #endregion
 
-        private void button1_Click(object sender, EventArgs e)
+        private void GenerateScrollListButton_Click(object sender, EventArgs e)
         {
-            bingo.CreateRandFromSeed();
+            Debug.WriteLine("Seed: " + bingo.IntSeed);
+            Debug.WriteLine("Number of scrolls: " + bingo.NumberOfScrolls);
+            bingo.GetRandomScrollList(bingo.NumberOfScrolls);
+            Debug.WriteLine("Scrolls List: " + bingo.PrintScrolls());
+            ScrollListTextBox.Text = "Scrolls List: " + bingo.PrintScrolls();
         }
+
+        private void ScrollNumber_ValueChanged(object sender, EventArgs e)
+        {
+            bingo.NumberOfScrolls = (int)ScrollNumber.Value;
+        }
+        #endregion
     }
 }
