@@ -31,12 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TeslaTools));
             this.Tabs = new System.Windows.Forms.TabControl();
             this.Bingo = new System.Windows.Forms.TabPage();
+            this.SeedLabel = new System.Windows.Forms.Label();
             this.ChangeSeedButton = new System.Windows.Forms.Button();
             this.SeedTextBox = new System.Windows.Forms.TextBox();
             this.TeslaSplit = new System.Windows.Forms.TabPage();
             this.SaveEditor = new System.Windows.Forms.TabPage();
             this.TASlagrad = new System.Windows.Forms.TabPage();
-            this.SeedLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.Tabs.SuspendLayout();
             this.Bingo.SuspendLayout();
             this.SuspendLayout();
@@ -58,6 +59,7 @@
             // Bingo
             // 
             this.Bingo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Bingo.BackgroundImage")));
+            this.Bingo.Controls.Add(this.button1);
             this.Bingo.Controls.Add(this.SeedLabel);
             this.Bingo.Controls.Add(this.ChangeSeedButton);
             this.Bingo.Controls.Add(this.SeedTextBox);
@@ -68,6 +70,17 @@
             this.Bingo.TabIndex = 2;
             this.Bingo.Text = "Bingo";
             this.Bingo.UseVisualStyleBackColor = true;
+            // 
+            // SeedLabel
+            // 
+            this.SeedLabel.AutoSize = true;
+            this.SeedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SeedLabel.ForeColor = System.Drawing.Color.Snow;
+            this.SeedLabel.Location = new System.Drawing.Point(25, 36);
+            this.SeedLabel.Name = "SeedLabel";
+            this.SeedLabel.Size = new System.Drawing.Size(62, 25);
+            this.SeedLabel.TabIndex = 3;
+            this.SeedLabel.Text = "Seed";
             // 
             // ChangeSeedButton
             // 
@@ -123,16 +136,15 @@
             this.TASlagrad.Text = "TASlagrad";
             this.TASlagrad.UseVisualStyleBackColor = true;
             // 
-            // SeedLabel
+            // button1
             // 
-            this.SeedLabel.AutoSize = true;
-            this.SeedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SeedLabel.ForeColor = System.Drawing.Color.Snow;
-            this.SeedLabel.Location = new System.Drawing.Point(25, 36);
-            this.SeedLabel.Name = "SeedLabel";
-            this.SeedLabel.Size = new System.Drawing.Size(62, 25);
-            this.SeedLabel.TabIndex = 3;
-            this.SeedLabel.Text = "Seed";
+            this.button1.Location = new System.Drawing.Point(394, 69);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // TeslaTools
             // 
@@ -160,6 +172,7 @@
         private System.Windows.Forms.TextBox SeedTextBox;
         private System.Windows.Forms.Button ChangeSeedButton;
         private System.Windows.Forms.Label SeedLabel;
+        private System.Windows.Forms.Button button1;
     }
 }
 

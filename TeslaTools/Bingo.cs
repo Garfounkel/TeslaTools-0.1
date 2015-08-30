@@ -1,21 +1,36 @@
 ﻿
 using System;
+using System.Diagnostics;
 
 namespace TeslaTools
 {
     class Bingo
     {
-        public Random rand;
+        private Random randSeed;
+        private Random rand;
+
         public string Seed;
 
         public Bingo()
         {
-            rand = new Random();
+            randSeed = new Random();
         }
 
         public string GetRandomSeed()
         {
-            return (rand.Next() % 100000).ToString();
+            return (randSeed.Next() % 100000).ToString();
+        }
+
+        public void CreateRandFromSeed()
+        {
+            int intSeed = 0;
+            foreach (char c in Seed)
+            {
+                intSeed += (c * c);
+            }
+
+            rand = new Random(intSeed);
+            Debug.WriteLine("Seed: " + intSeed);
         }
     }
 }

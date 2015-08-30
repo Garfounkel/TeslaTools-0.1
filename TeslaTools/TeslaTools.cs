@@ -19,7 +19,7 @@ namespace TeslaTools
             tasLagrad = new TASlagrad();
             teslaSplit = new TeslaSplit();
 
-            //Bingo Stuffs
+            // Bingo Stuffs 
             SeedTextBox.Text = bingo.GetRandomSeed();
         }
 
@@ -34,5 +34,10 @@ namespace TeslaTools
             SeedTextBox.Text = bingo.GetRandomSeed();
         }
         #endregion
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            bingo.CreateRandFromSeed();
+        }
     }
 }
