@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows.Forms;
 
@@ -28,8 +29,8 @@ namespace TeslaTools
         #region Bingo Stuffs
         private void SeedTextBox_TextChanged(object sender, EventArgs e)
         {
-            bingo.Seed = SeedTextBox.Text;
-            bingo.CreateRandFromSeed();
+            bingo.StringSeed = SeedTextBox.Text;
+            bingo.SetSeed();
         }
 
         private void ChangeSeedButton_Click(object sender, EventArgs e)
@@ -39,16 +40,24 @@ namespace TeslaTools
 
         private void GenerateScrollListButton_Click(object sender, EventArgs e)
         {
+            bingo.SetSeed();
             Debug.WriteLine("Seed: " + bingo.IntSeed);
             Debug.WriteLine("Number of scrolls: " + bingo.NumberOfScrolls);
-            bingo.GetRandomScrollList(bingo.NumberOfScrolls);
-            Debug.WriteLine("Scrolls List: " + bingo.PrintScrolls());
-            ScrollListTextBox.Text = "Scrolls List: " + bingo.PrintScrolls();
+            bingo.GetRandomScrollList(bingo.NumberOfScrolls, new List<int>());
+            Debug.WriteLine("Scrolls List: " + bingo.PrintList(bingo.ScrollsList));
+            ScrollListTextBox.Text = "Scrolls List: " + bingo.PrintList(bingo.ScrollsList);
         }
 
         private void ScrollNumber_ValueChanged(object sender, EventArgs e)
         {
             bingo.NumberOfScrolls = (int)ScrollNumber.Value;
+        }
+
+        private void GenerateBingoCard_Click(object sender, EventArgs e)
+        {
+            bingo.SetSeed();
+            bingo.GenerateBingoCard();
+            BingoCardTextBox.Text = "Bingo Card:" + Environment.NewLine + bingo.PrintBingoCard(bingo.BingoCard);
         }
         #endregion
     }
