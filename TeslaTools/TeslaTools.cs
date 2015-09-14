@@ -56,9 +56,18 @@ namespace TeslaTools
         private void GenerateBingoCard_Click(object sender, EventArgs e)
         {
             bingo.SetSeed();
-            bingo.GenerateBingoCard();
+            bingo.GenerateBingoCard(3);
             BingoCardTextBox.Text = "Bingo Card:" + Environment.NewLine + bingo.PrintBingoCard(bingo.BingoCard);
         }
+
+        private void GenerateBingo551_Click(object sender, EventArgs e)
+        {
+            bingo.SetSeed();
+            bingo.GenerateBingoCard(1);
+            BingoCardTextBox551.Text = "Bingo Card:" + Environment.NewLine + bingo.PrintBingoCard(bingo.BingoCard);
+        }
+
         #endregion
+
     }
 }

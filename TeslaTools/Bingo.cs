@@ -7,6 +7,7 @@ namespace TeslaTools
     class Bingo
     {
         private Random rand;
+        private List<int> banList = new List<int>() { 20, 24, 17, 33, 28, 25, 26, 3, 13, 27,/**/ 5, 10 };
 
         public string StringSeed;
         public int IntSeed;
@@ -74,7 +75,7 @@ namespace TeslaTools
             return s;
         }
 
-        public void GenerateBingoCard()
+        public void GenerateBingoCard(int nb)
         {
             BingoCard = new List<int>[5, 5];
             for (int i = 0; i < BingoCard.GetLength(0); i++)
@@ -83,12 +84,12 @@ namespace TeslaTools
                 {
                     if (IsDiagonal(i, j))
                     {
-                        BingoCard[i, j] = GetRandomScrollList(3,
+                        BingoCard[i, j] = GetRandomScrollList(nb,
                             NotAvailableScrollsNormal(i, j).Concat(NotAvailableScrollsDiagonal(i, j)).ToList());
                     }
                     else
                     {
-                        BingoCard[i, j] = GetRandomScrollList(3, NotAvailableScrollsNormal(i, j));
+                        BingoCard[i, j] = GetRandomScrollList(nb, NotAvailableScrollsNormal(i, j));
                     }
                 }
             }
@@ -160,5 +161,29 @@ namespace TeslaTools
 
             return s;
         }
+
+/*
+        public int[,] GenerateBingo551()
+        {
+            int[,] BingoCard511 = new int[5,5];
+            for (int i = 0; i < BingoCard511.GetLength(0); i++)
+            {
+                for (int j = 0; j < BingoCard511.GetLength(1); j++)
+                {
+                   /* if (IsDiagonal(i, j))
+                    {
+                        BingoCard511[i, j] = GetRandomScrollList(3,
+                            NotAvailableScrollsNormal(i, j).Concat(NotAvailableScrollsDiagonal(i, j)).ToList());
+                    }
+                    else
+                    {
+                        BingoCard511[i, j] = GetRandomScrollList(3, NotAvailableScrollsNormal(i, j));
+                    }#1#
+                }
+            }
+            return BingoCard511;
+        } 
+
+        private int GetRandomScroll()*/
     }
 }
